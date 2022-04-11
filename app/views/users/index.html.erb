@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  
+  <% if notice %>
+    <script type="text/javascript">
+      toastr.success('<%= notice %>');
+    </script>
+  <% end %>
+  <%# LINK TO CREATE USER %>
+  <%= link_to "Crear usuario", new_user_path , :class=> "btn btn-primary" ,:type=> "button"%>
+  <%# LIST USERS %>
+  <% @users.each do |user| %>
+    <div class='card card-user'>
+      <%= render user %>
+      <div class="actions">
+        
+        <%= link_to edit_user_path(user), :class=>"btn btn-success" do %>
+          <i class="fas fa-address-card"></i> Editar
+        <%end%>
+        <%= button_to user, method: :delete, :class=>"btn btn-danger" do %>
+          <i class="fas fa-archive"></i> Eliminar
+        <%end%>
+      </div>
+    </div>
+  <% end %>
+</div>

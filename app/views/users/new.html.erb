@@ -1,0 +1,14 @@
+
+<div class="container">
+  <div class="breadcrumb">
+    <%= link_to users_path, :class=>"link" do %>
+      <i class="fas fa-arrow-circle-left"></i>
+       Ver todos los Usuarios
+    <% end %> 
+  </div>
+  <h1 class="title">Crear Usuario</h1>
+  <%= render "form", user: @user, title: "Crear Usuario" %>
+
+  <br>
+
+</div>
